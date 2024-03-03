@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Digizilla,Company,Tag
 
-# Register your models here.
+admin.site.register(Digizilla)
+admin.site.register(Company)
+admin.site.register(Tag)
+
