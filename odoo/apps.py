@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class DigizillaConfig(AppConfig):
+class odooConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'digizilla'
+    name = 'odoo'
