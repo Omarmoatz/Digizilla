@@ -6,3 +6,7 @@ class DigizillaList(generic.ListView):
     model = Digizilla
 
 
+class DigizillaCreate(generic.CreateView):
+    model = Digizilla
+    fields = '__all__'
+    success_url = '/odoo/'
