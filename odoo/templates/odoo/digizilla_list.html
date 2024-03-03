@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digizella</title>
+</head>
+<body>
+    
+    <h1>digizella list</h1>
+    <h3>
+        <ul>
+            {% for item in digizilla_list %}
+            <li>{{ item.name }}</li>
+            {% endfor %}
+        </ul>
+    </h3>
+    
+</body>
+</html>
+
