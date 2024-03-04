@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views import generic,View
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
@@ -20,6 +20,11 @@ class DigizillaUpdate(generic.UpdateView):
     model = Digizilla
     fields = '__all__'
     success_url = '/odoo/'
+
+def digizilla_delete(request,id):
+    data = Digizilla.objects.get(id=id)
+    data.delete()
+    return redirect('/odoo/')
 
 class DigizillaPDFView(View):
     def get(self, request, *args, **kwargs):

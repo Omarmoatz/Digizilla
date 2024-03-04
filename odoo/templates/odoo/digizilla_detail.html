@@ -10,31 +10,63 @@
         body{
             background-color: rgba(86, 47, 0, 0.34);
         }
+        h4{
+            color: aliceblue;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-6 mx-auto">
-                <h1>digizella detail</h1>
+            <div class="col-6 mx-auto mt-5">
+                <h1 class="text-primary-emphasis">{{ digizilla.name }}'s detail</h1>
                 <h3>
+                    {% comment %} <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">name</th>
+                            <th scope="col">gender</th>
+                            <th scope="col">country</th>
+                            <th scope="col">joining date</th>
+                            <th scope="col">tags</th>
+                            <th scope="col">customers</th>
+                            <th scope="col">notes</th>
+                            <th scope="col">comments</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{{ digizilla.name }}</th>
+                            <td>{{ digizilla.gender }}</td>
+                            <td>{{ digizilla.country }}</td>
+                            <td>{{ digizilla.joining_date }}</td>
+                            <td>{{ digizilla.tags }}</td>
+                            <td>{{ digizilla.customers }}</td>
+                            <td>{{ digizilla.notes }}</td>
+                            <td>{{ digizilla.comments }}</td>
+                          </tr>
+                        </tbody>
+                      </table> {% endcomment %}
                     <ul>
   
-                        <li>{{ digizilla.name }}</li>
-                        <li>{{ digizilla.gender }}</li>
-                        <li>{{ digizilla.country }}</li>
-                        <li>{{ digizilla.joining_date }}</li>
-                        <li>{{ digizilla.tags }}</li>
-                        <li>{{ digizilla.customers }}</li>
-                        <li>{{ digizilla.notes }}</li>
-                        <li>{{ digizilla.comments }}</li>
+                        <li><h4>name:</h4> {{ digizilla.name }}</li>
+                        <li><h4>gender:</h4> {{ digizilla.gender }}</li>
+                        <li><h4>country:</h4> {{ digizilla.country }}</li>
+                        <li><h4>joining_date:</h4> {{ digizilla.joining_date }}</li>
+                        <li><h4>tags:</h4> {{ digizilla.tags }}</li>
+                        <li><h4>customers:</h4> {{ digizilla.customers }}</li>
+                        <li><h4>notes:</h4> {{ digizilla.notes }}</li>
+                        <li><h4>comments:</h4> {{ digizilla.comments }}</li>
                         
-                    </ul>
+                    </ul> 
                     <a href="{% url 'odoo:update' digizilla.id %}">
                         <button type="button" class="btn btn-warning">update</button>
                     </a>
+                    <a href="{% url 'odoo:delete' digizilla.id %}">
+                        <button type="button" class="btn btn-danger">delete</button>
+                    </a><br>
                     <a href="{% url 'odoo:list' %}">
-                        <button type="button" class="btn btn-danger">go back to maim page</button>
+                        <button type="button" class="btn btn-info mt-5 mb-5">go back to maim page</button>
                     </a>
 
             
