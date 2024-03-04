@@ -5,7 +5,8 @@ from .models import Digizilla
 class DigizillaList(generic.ListView):
     model = Digizilla
 
-
+class DigizillaDetail(generic.DetailView):
+    model = Digizilla
 
 class DigizillaCreate(generic.CreateView):
     model = Digizilla
