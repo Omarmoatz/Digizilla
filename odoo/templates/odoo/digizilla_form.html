@@ -18,7 +18,7 @@
         <div class="row">
             
             <div class="col-6 mx-auto mt-5">
-                <h1 class="mx-auto"> add new</h1>
+                <h1 class="mx-auto"> Create Form</h1>
                 <form method="post" class="form-control mb-5">
                     {% csrf_token %}
                 
@@ -27,9 +27,16 @@
                     {% bootstrap_button button_type="submit" content="OK" %}
                     {% bootstrap_button button_type="reset" content="Cancel" %}
                 </form>
-                <a href="{% url 'odoo:list' %}"><button type="button" class="btn btn-danger">go back to maim page</button></a>
+                <a href="{% url 'odoo:list' %}">
+                    <button type="button" class="btn btn-danger">go back to maim page</button>
+                </a>
             </div>           
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('input[type="submit"]').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
