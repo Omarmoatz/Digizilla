@@ -47,6 +47,11 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
-
+@receiver(post_save, sender=Digizilla)
+def log_changes(sender, instance, created, **kwargs):
+    if created:
+        print("New Digizilla created:", instance)
+    else:
+        print("Digizilla updated:", instance)
 
 
