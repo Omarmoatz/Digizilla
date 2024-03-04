@@ -15,15 +15,16 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-6 mx-auto">
+            <div class="col-6 mx-auto mt-5">
                 <h1>digizella list</h1>
                 <h3>
                     <ul>
                         {% for item in digizilla_list %}
-                        <li>{{ item.name }}</li>
+                        <li>{{ item.name }}</li> 
+                        <a href="{% url 'odoo:detail' item.id %}">see details</a>
                         {% endfor %}
                     </ul>
-                    <a href="/odoo/add/">
+                    <a href="{% url 'odoo:add' %}">
                         <button type="button" class="btn btn-warning">add new</button>
                     </a>
             
