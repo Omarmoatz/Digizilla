@@ -13,3 +13,7 @@ class DigizillaCreate(generic.CreateView):
     fields = '__all__'
     success_url = '/odoo/'
 
+class DigizillaCreate(generic.UpdateView):
+    model = Digizilla
+    fields = '__all__'
+    success_url = '/odoo/'
