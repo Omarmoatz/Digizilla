@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import DigizillaList,DigizillaDetail,DigizillaCreate,DigizillaUpdate,DigizillaPDFView,digizilla_delete
+from .views import DigizillaList,DigizillaDetail,DigizillaCreate,DigizillaUpdate,DigizillaPDFView,digizilla_delete,dashboard
 
 app_name = 'odoo'
 

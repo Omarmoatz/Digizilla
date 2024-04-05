@@ -19,10 +19,12 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from odoo.views import dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('odoo/', include('odoo.urls'))
+    path('odoo/', include('odoo.urls')),
+    path('dashboard/' , dashboard ),
 ]
 
 if settings.DEBUG:
