@@ -3,7 +3,7 @@ from django.views import generic,View
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 
-from .models import Company, Digizilla, Tag
+from .models import Company, Digizilla, Tag,User
 
 class DigizillaList(generic.ListView):
     model = Digizilla
@@ -57,10 +57,12 @@ class DigizillaPDFView(View):
 def dashboard(request):
     digizilla = Digizilla.objects.all().count()
     company = Company.objects.all().count()
-    tag = Tag.objects.all().count() 
+    tag = Tag.objects.all().count()
+    user = User.objects.all().count() 
 
     context = {'digizilla':digizilla,
                 'company':company,
-                'tag':tag}
+                'tag':tag,
+                'user':user}
     
     return render(request, 'odoo/dashboard.html', context )
