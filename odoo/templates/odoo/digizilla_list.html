@@ -6,33 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>digizella</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <style>
-        body{
-            background-color: rgba(86, 47, 0, 0.34);
-        }
-    </style>
 </head>
 <body>
+    <div class="">
+        <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" >pages</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="{% url 'odoo:digizilla_pdf' %}" class="btn btn-outline-success">Generate Report</a>
+                    <a href="{% url 'odoo:add' %}" class="btn btn-outline-warning mx-5">add new</a><br>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </div>
     <div class="container">
         <div class="row">
-            <div class="col-6 mx-auto mt-5">
-                <h1>digizella list</h1>
-                <h3>
-
-                    <ul>
-                        {% for item in digizilla_list %}
-                        <li>{{ item.name }}</li> 
-                        <a href="{% url 'odoo:detail' item.id %}">see details</a>
-                        {% endfor %}
-                    </ul>
-                    <a href="{% url 'odoo:add' %}">
-                        <button type="button" class="btn btn-warning mt-5 mb-5">add new</button>
-                    </a><br>
-                    <a href="{% url 'odoo:digizilla_pdf' %}">
-                        <button type="button" class="btn btn-success">Generate Report</button>
-                    </a>
-            
-                </h3>
+            <div class="col-8 mx-auto mt-5">
+                <h1>digizella Staff</h1>
+                {% for item in digizilla_list %}
+                    <div class="card w-75 mb-3">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ item.name }}</h5>
+                          <p class="card-text">{% lorem 1 b random %}</p>
+                          <a href="{% url 'odoo:detail' item.id %}" class="btn btn-primary">Details</a>
+                        </div>
+                      </div>
+                {% endfor %}
+                
             </div>
         </div>
     </div>
