@@ -1,6 +1,6 @@
-# Digizilla
+# PDF-Generator
 
-Digizilla is a Django-based project that implements CRUD (Create, Read, Update, Delete) operations and generates a report for the data in a PDF format[1]. It provides a customized admin panel for better management of the data.
+PDF-Generator is a Django-based project that implements CRUD (Create, Read, Update, Delete) operations and generates a report for the data in a PDF format. It provides a customized admin panel for better management of the data.
 
 ## Features
 
